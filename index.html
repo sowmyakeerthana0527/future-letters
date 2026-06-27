@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Me to Future Me</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PAGE 1: Cover (16:9) -->
+  <div id="cover" class="page cover-page">
+    <div class="cover-inner">
+      <div class="spiral-left"></div>
+      <div class="cover-content">
+        <p class="mini-text">Letters to</p>
+        <div class="photo-frame">
+          <img src="me&mom.jpeg" alt="mini me" />
+        </div>
+        <p class="me-text">my future self</p>
+        <button onclick="openVault()">open ✨</button>
+      </div>
+      <div class="star star-1">★</div>
+      <div class="star star-2">★</div>
+      <div class="star star-3">★</div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: Vault -->
+  <div id="vault" class="page vault-page hidden">
+
+    <div class="vault-header">
+      <h1>my future self</h1>
+      <p>dreams sealed. waiting to be opened.</p>
+    </div>
+
+    <div class="vault-nav">
+      <button class="nav-btn active" onclick="showTab('dreams')">my dreams</button>
+      <button class="nav-btn" onclick="showTab('write')">write one</button>
+      <button class="nav-btn" onclick="showTab('checkin')">check in</button>
+    </div>
+
+    <!-- Dreams list -->
+    <div id="tab-dreams" class="tab-content">
+      <div id="dream-cards">
+        <p class="empty-msg">nothing here yet. write your first dream ✨</p>
+      </div>
+    </div>
+
+    <!-- Write form -->
+    <div id="tab-write" class="tab-content hidden">
+      <div class="form-box">
+        <div class="field">
+          <label>category</label>
+          <select id="f-cat">
+            <option value="career">Career & Finance</option>
+            <option value="health">Health & Fitness</option>
+            <option value="skills">Skills & Learning</option>
+            <option value="travel">Travel & Experiences</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>dream title</label>
+          <input type="text" id="f-title" placeholder="e.g. start my own studio" />
+        </div>
+        <div class="field">
+          <label>dear future me...</label>
+          <textarea id="f-body" placeholder="write honestly. no one else will read this."></textarea>
+        </div>
+        <div class="field">
+          <label>check back on</label>
+          <input type="date" id="f-date" />
+        </div>
+        <button class="save-btn" onclick="saveDream()">seal it 🔒</button>
+      </div>
+    </div>
+
+    <!-- Check in -->
+    <div id="tab-checkin" class="tab-content hidden">
+      <div id="checkin-cards">
+        <p class="empty-msg">no dreams to check in on yet.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
